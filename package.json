@@ -1,0 +1,23 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "/scripts/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lawtonlegacy/weather-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lawtonlegacy/weather-app/issues"
+  },
+  "homepage": "https://github.com/Lawtonlegacy/weather-app#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
