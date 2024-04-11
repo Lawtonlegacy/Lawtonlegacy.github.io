@@ -95,6 +95,7 @@ function displayWeather() {
     document.getElementById('temperature').removeAttribute('hidden');
     document.getElementById('weatherTableContainer').removeAttribute('hidden');
     document.getElementById('checkboxes').removeAttribute('hidden');
+    localStorage.setItem('unitCheckboxChecked', document.getElementById('toggleUnit').checked);
 }
 
 function getIcon(data) {
@@ -124,3 +125,19 @@ function saveFavorite() {
         document.cookie = CURRENTLOCATIONID;
     }
 }
+
+// Function to set the state of the checkbox based on localStorage
+function setCheckboxState() {
+    const isChecked = localStorage.getItem('unitCheckboxChecked');
+    if (isChecked === 'true') {
+        document.getElementById('toggleUnit').checked = true;
+    } else {
+        document.getElementById('toggleUnit').checked = false;
+    }
+}
+
+// Call the function to set the checkbox state when the page loads
+window.onload = setCheckboxState;
+
+// Event listener for the checkbox to call displayWeather() when toggled
+document.getElementById('toggleUnit').addEventListener('change', displayWeather);
